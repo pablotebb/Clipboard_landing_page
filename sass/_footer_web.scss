@@ -1,0 +1,112 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.footer-web {
+  position: absolute;
+  top: 215.625rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  // border: 1px solid blue;
+  margin-bottom: 2rem;
+  height: 8.25rem;
+  background-color: v.$Footer-back;
+  &__logo {
+    img {
+      width: 3.4375rem;
+      height: 3.4375rem;
+    }
+  }
+  //⬇️ 951px
+  @media (max-width: 59.4375rem) {
+    // border: 8px solid red;
+    top: 220.625rem;
+  }
+  //⬇️ 779px
+  @media (max-width: 48.6875rem) {
+    // border: 8px solid red;
+    top: 270.625rem;
+  }
+  //⬇️ 669px
+  @media (max-width: 41.8125rem) {
+    height: 33.3125rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  //⬇️ 550px
+  @media (max-width: 34.375rem) {
+    // border: 8px solid red;
+    top: 280.625rem;
+  }
+  //⬇️ 467px
+  @media (max-width: 29.1875rem) {
+    // border: 8px solid red;
+    top: 285.625rem;
+  }
+  //⬇️ 385px
+  @media (max-width: 24.0625rem) {
+    // border: 8px solid red;
+    top: 290.625rem;
+  }
+  //⬇️⬆️ 376px
+  @media (max-width: 23.5rem) {
+    // border: 8px solid red;
+    top: 285.625rem;
+  }
+}
+
+.footer-web-left {
+  // border: 1px solid red;
+  display: flex;
+  // gap: 3.3125rem;
+  gap: 4.3125rem;
+  height: 5.3125rem;
+  &__first-ul,
+  &__second-ul,
+  &__third-ul {
+    list-style: none;
+    @include m.link-footer-web();
+  }
+  //⬇️ 990px
+  @media (max-width: 61.875rem) {
+    // border: 8px solid red;
+    gap: 3.3125rem;
+  }
+  //⬇️⬆️ 669px
+  @media (max-width: 41.8125rem) {
+    // border: 8px solid red;
+    flex-direction: column;
+    height: 14.3125rem;
+    &__second-ul,
+    &__third-ul {
+      margin-top: -3.125rem;
+    }
+  }
+}
+
+.footer-web-right {
+  display: flex;
+  align-items: center;
+  gap: 1.4375rem;
+  &__facebook {
+    @include m.social-network-footer-web();
+  }
+  &__twitter {
+    @include m.social-network-footer-web(
+      1.5rem,
+      1.5rem,
+      "../images/icon-twitter.svg",
+      "../images/icon-twitter-cyan.svg"
+    );
+  }
+  &__instagram {
+    @include m.social-network-footer-web(
+      1.5625rem,
+      1.75rem,
+      "../images/icon-instagram.svg",
+      "../images/icon-instagram-cyan.svg"
+    );
+  }
+}

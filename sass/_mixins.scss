@@ -1,0 +1,113 @@
+@use "variables" as v;
+
+@mixin create_buttons($width: 14.1875rem, $height: 3.4375rem) {
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  button:nth-child(1),
+  button:nth-child(2) {
+    font-size: 1.12rem;
+    font-weight: 400;
+    color: v.$White;
+    letter-spacing: 0.05rem;
+    width: $width;
+    height: $height;
+    border-radius: 3.4375rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 0.1875rem solid hsl(171, 65%, 37%);
+    box-shadow: 0 0.75rem 1.25rem rgb(45 203 179 / 25%);
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+  }
+  button:nth-child(1) {
+    // border: 5px solid red;
+    background-color: v.$Strong-Cyan;
+  }
+  button:nth-child(2) {
+    // border: 5px solid blue;
+    background-color: v.$Light-Blue;
+  }
+}
+
+@mixin little_article(
+  $Padding-right: 12.5rem,
+  $Font-size-description: 1rem,
+  $Font-size-title: 1.48rem,
+  $Font-weight-title: 500,
+  $Letter-spacing-title: normal,
+  $Color-title: v.$Dark-Grayish-Blue,
+  $Font-weight-description: 300,
+  $Letter-spacing-description: 0.014rem,
+  $Color-description: v.$Grayish-Blue,
+  $Width-description: 100%,
+  $Margin-bottom-title: 0.5625rem,
+  $Line-height-description: normal,
+  $Width-title: unset,
+  $Justify-content-title: unset,
+  $Margin-bottom-description: 2.375rem
+) {
+  &__title {
+    // border: 1px solid red;
+    font-size: $Font-size-title;
+    font-weight: $Font-weight-title;
+    letter-spacing: $Letter-spacing-title;
+    color: $Color-title;
+    margin-bottom: $Margin-bottom-title;
+    display: flex;
+    flex-wrap: wrap;
+    width: $Width-title;
+    justify-content: $Justify-content-title;
+  }
+  &__description {
+    // border: 1px solid green;
+    font-size: $Font-size-description;
+    font-weight: $Font-weight-description;
+    letter-spacing: $Letter-spacing-description;
+    color: $Color-description;
+    margin-bottom: $Margin-bottom-description;
+    padding-right: $Padding-right;
+    width: $Width-description;
+    line-height: $Line-height-description;
+  }
+}
+
+@mixin link-footer-web() {
+  &--link {
+    margin-bottom: 1.375rem;
+    a {
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.025rem;
+      color: v.$Dark-Grayish-Blue;
+      text-decoration: none;
+      height: 1.375rem;
+      &:hover {
+        cursor: pointer;
+        color: v.$Strong-Cyan;
+      }
+    }
+  }
+}
+
+@mixin social-network-footer-web(
+  $Width: 1.5625rem,
+  $Height: 1.75rem,
+  $Path-background-img-1: "../images/icon-facebook.svg",
+  $Path-background-img-2: "../images/icon-facebook-cyan.svg"
+) {
+  width: $Width;
+  height: $Height;
+  background-image: url($Path-background-img-1);
+  background-repeat: no-repeat;
+  background-size: contain;
+  &:hover {
+    cursor: pointer;
+    background-image: url($Path-background-img-2);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

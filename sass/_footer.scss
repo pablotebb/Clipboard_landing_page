@@ -1,0 +1,25 @@
+.attribution {
+  position: relative;
+  top: 175rem;
+  font-size: 0.8125rem;
+  text-align: center;
+  padding-bottom: 3.75rem;
+  // ⬇️ 779px;
+  @media (max-width: 48.6875rem) {
+    // border: 8px solid red;
+    top: 225rem;
+  }
+  // ⬇️ 668px;
+  @media (max-width: 41.75rem) {
+    // border: 8px solid red;
+    top: 243.75rem;
+  }
+  // ⬇️⬆️ 466px;
+  @media (max-width: 29.125rem) {
+    // border: 8px solid red;
+    top: 253.75rem;
+  }
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

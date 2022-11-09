@@ -1,0 +1,35 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.article-keep-track {
+  // border: 1px solid green;
+  margin-bottom: 5rem;
+  &__title {
+    // border: 1px solid red;
+    font-size: 2.22rem;
+    font-weight: 500;
+    letter-spacing: normal;
+    color: v.$Dark-Grayish-Blue;
+    text-align: center;
+    height: 4.0625rem;
+  }
+  &__description {
+    font-size: 1.0625rem;
+    font-weight: 200;
+    letter-spacing: 0.027rem;
+    color: v.$Grayish-Blue;
+    text-align: center;
+    line-height: 1.6875rem;
+  }
+  // ⬇️ 587px
+  @media (max-width: 36.6875rem) {
+    // border: 5px solid green;
+    &__title {
+      font-size: 1.7rem;
+      margin-bottom: 2.5rem;
+    }
+    &__description {
+      font-size: 1rem;
+    }
+  }
+}
