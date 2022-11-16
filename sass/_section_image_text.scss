@@ -1,14 +1,14 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 
 .section-image-text {
   // border: 1px solid red;
-  width: 64rem;
+  width: 100%;
   max-width: 90rem;
   position: absolute;
   left: 0;
   right: 0;
-  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -19,9 +19,25 @@
     img {
       // border: 6px solid yellow;
       width: 42.1875rem;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.07);
+      }
     }
   }
-  // ⬇️ 1116px
+
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-4k", 1) {
+    // border: 9px solid blue;
+    margin: auto;
+  }
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-1080p", 1) {
+    // border: 9px solid blue;
+    margin: auto;
+  }
+
+  // 1116px
   @media (max-width: 69.75rem) {
     flex: 1;
     &__picture {
@@ -31,7 +47,7 @@
       }
     }
   }
-  // ⬇️ 990px
+  // 990px
   @media (max-width: 61.875rem) {
     // border: 1px solid red;
     gap: 3.875rem;
@@ -43,10 +59,11 @@
       }
     }
   }
-  // ⬇️ 772px
+  // 772px
   @media (max-width: 48.25rem) {
     flex-direction: column;
     align-items: center;
+    left: 0;
     &__picture {
       img {
         // border: 6px solid yellow;
@@ -57,7 +74,7 @@
       }
     }
   }
-  // ⬇️ 518px
+  // 518px
   @media (max-width: 32.375rem) {
     &__picture {
       img {
@@ -69,37 +86,45 @@
       }
     }
   }
-  // ⬇️⬆️ 390px
-  @media (max-width: 32.375rem) {
+  // 390px
+  @media (max-width: 24.4375rem) {
     &__picture {
       img {
         // border: 6px solid yellow;
-        min-width: 18.9375rem;
+        width: 18.9375rem;
+        max-width: 100%;
         margin-left: 1.25rem;
         display: block;
         margin: auto;
       }
     }
   }
+
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    // border: 1px solid red;
+    width: 100%;
+    margin: auto;
+  }
 }
 
 .section-image-text-aside {
+  // border: 1px solid red;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  // border: 1px solid red;
   margin-top: 4.25rem;
-  // ⬇️ 1116px
+  // 1116px
   @media (max-width: 69.75rem) {
     flex: 1;
   }
-  // ⬇️ 990px
+  // 990px
   @media (max-width: 61.875rem) {
     // border: 5px solid yellow;
     margin-top: -2.5rem;
   }
-  // ⬇️ 772px
+  // 772px
   @media (max-width: 48.25rem) {
     // border: 1px solid red;
     margin-top: unset;
@@ -107,12 +132,29 @@
     align-items: center;
     max-width: 60%;
   }
-  // ⬇️ 518px
+
+  // 518px
   @media (max-width: 32.375rem) {
     max-width: 80%;
   }
-  // ⬇️⬆️ 390px
-  @media (max-width: 32.375rem) {
+
+  // 390px
+  @media (max-width: 24.4375rem) {
+    width: 100%;
+  }
+
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    width: 100%;
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("samsung-galaxy-s3-7", 1) {
+    width: 100%;
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("lg-g3-5", 1) {
     width: 100%;
   }
 }
@@ -120,52 +162,209 @@
 .section-image-text-aside-article-quick,
 .section-image-text-aside-article-icloud,
 .section-image-text-aside-article-history {
+  // border: 1px solid red;
   @include m.little_article();
-  // ⬇️ 1116px
+  // 1116px
   @media (max-width: 69.75rem) {
     // border: 1px solid red;
     @include m.little_article(7rem);
   }
-  // ⬇️ 990px
-  @media (max-width: 61.875rem) {
-    // border: 5px solid yellow;
-  }
-  // ⬇️ 772px
+  // 772px
   @media (max-width: 48.25rem) {
     @include m.little_article(
+      // 1
       1rem,
+      // 2
       1rem,
+      // 3
       1.48rem,
+      // 4
       500,
+      // 5
       normal,
+      // 6
       v.$Dark-Grayish-Blue,
+      // 7
       300,
+      // 8
       0.014rem,
+      // 9
       v.$Grayish-Blue,
+      // 10
       100%,
+      // 11
       0.5625rem,
+      // 12
       normal,
+      // 13
       unset,
+      // 14
       center
     );
     text-align: center;
-  } // ⬇️⬆️ 390px
+  }
+
+  // 518px
   @media (max-width: 32.375rem) {
+    max-width: 80%;
+  }
+
+  // 390px
+  @media (max-width: 32.375rem) {
+    // width: 100%;
     @include m.little_article(
+      // 1
       1rem,
+      // 2
       0.85rem,
+      // 3
       1.48rem,
+      // 4
       500,
+      // 5
       normal,
+      // 6
       v.$Dark-Grayish-Blue,
+      // 7
       300,
+      // 8
       0.014rem,
+      // 9
       v.$Grayish-Blue,
+      // 10
       100%,
+      // 12
       0.5625rem,
+      // 13
       normal,
+      // 14
       unset,
+      // 15
       center
+    );
+  }
+
+  // ⬇️⬆️ 375px
+  @media (max-width: 23.5rem) {
+    max-width: 300%;
+    font-size: 1.1875rem;
+    letter-spacing: 0.027rem;
+  }
+
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    max-width: 300%;
+    font-size: 1.1875rem;
+    letter-spacing: 0.027rem;
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("lg-g3-5", 1) {
+    width: 100%;
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("samsung-galaxy-s3-7", 1) {
+    width: 100%;
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("apple-iphone-5", 1) {
+    @include m.comun-article();
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("samsung-galaxy-s2", 1) {
+    @include m.comun-article();
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 1) {
+    @include m.comun-article();
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("blackberry-8300", 1) {
+    @include m.comun-article();
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    @include m.comun-article();
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    // border: 1px solid red;
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      0.984374rem,
+      // 3
+      1.48rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.014rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      100%,
+      // 11
+      0.5625rem,
+      // 12
+      25px,
+      // 13
+      unset,
+      // 14
+      unset,
+      // 15
+      2.375rem,
+      // 16
+      1
+    );
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      0.984374rem,
+      // 3
+      1.48rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.014rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      100%,
+      // 11
+      0.5625rem,
+      // 12
+      25px,
+      // 13
+      unset,
+      // 14
+      center,
+      // 15
+      2.375rem
     );
   }
 }

@@ -1,3 +1,5 @@
+@use "mixins_dimensions" as md;
+
 .attribution {
   position: relative;
   top: 175rem;
@@ -14,10 +16,65 @@
     // border: 8px solid red;
     top: 243.75rem;
   }
-  // ⬇️⬆️ 466px;
+  // ⬇️ 466px;
   @media (max-width: 29.125rem) {
     // border: 8px solid red;
     top: 253.75rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-6-7-plus", 2) {
+    top: 225rem;
+    font-size: 1.25rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-6-7", 2) {
+    top: 245rem;
+    font-size: 1.25rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("lg-g3-5", 2) {
+    top: 245rem;
+    font-size: 1.125rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-5", 2) {
+    top: 245rem;
+    font-size: 1rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("samsung-galaxy-s2", 2) {
+    top: 245rem;
+    font-size: 1rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 1) {
+    top: 280rem;
+    font-size: 0.75rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 2) {
+    top: 250rem;
+    font-size: 1rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 1) {
+    top: 305rem;
+    font-size: 0.5rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    top: 270rem;
+    font-size: 0.6875rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    top: 335rem;
+    font-size: 0.375rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    top: 315rem;
+    font-size: 0.5rem;
   }
 }
 .attribution a {

@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 @use "initial";
 @use "footer";
 @use "header_web";
@@ -11,7 +12,7 @@
 
 .main-container {
   margin: 3.8125rem auto 5.4375rem;
-  // ⬇️ 1450px
+  // 1450px
   @media (max-width: v.$Width-media) {
     // border: 1px solid blue;
     width: v.$Width-desktop;
@@ -20,33 +21,28 @@
     min-height: v.$Height-desktop;
     margin: 8rem auto 8rem;
   }
-  // ⬇️ 932px
+  // 932px
   @media (max-width: 58.25rem) {
     // border: 1px solid red;
     width: 37.5rem;
   }
-  // ⬇️ 772px
+  // 772px
   @media (max-width: 48.25rem) {
     // border: 5px solid brown;
     width: 31.25rem;
   }
-  // ⬇️ 665px
+  // 665px
   @media (max-width: 41.5625rem) {
     // border: 5px solid pink;
     width: 28.125rem;
   }
-  // ⬇️ 587px
+  // 587px
   @media (max-width: 36.6875rem) {
     // border: 5px solid green;
     width: 25rem;
   }
-  // ⬇️ 405px
+  // 405px
   @media (max-width: 25.3125rem) {
     width: auto;
-  }
-  // ⬇️⬆️ 375px
-  @media (max-width: 23.4375rem) {
-    // border: 5px solid yellow;
-    width: v.$Width-mobile;
   }
 }

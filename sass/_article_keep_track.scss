@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 
 .article-keep-track {
   // border: 1px solid green;
@@ -12,24 +13,98 @@
     color: v.$Dark-Grayish-Blue;
     text-align: center;
     height: 4.0625rem;
+    max-width: 100%;
   }
   &__description {
+    // border: 1px solid red;
     font-size: 1.0625rem;
     font-weight: 200;
     letter-spacing: 0.027rem;
     color: v.$Grayish-Blue;
     text-align: center;
     line-height: 1.6875rem;
+    width: 45rem;
+    max-width: 100%;
   }
   // ⬇️ 587px
   @media (max-width: 36.6875rem) {
     // border: 5px solid green;
     &__title {
       font-size: 1.7rem;
-      margin-bottom: 2.5rem;
+      height: 0;
+      width: 70%;
+      max-width: 100%;
+      margin: 0 auto 5.5rem;
     }
     &__description {
       font-size: 1rem;
+      width: 93%;
+      max-width: 100%;
+      margin: auto;
+    }
+  }
+
+  // ⬇️⬆️ 375px
+  @media (max-width: 23.5rem) {
+    &__description {
+      max-width: 90%;
+    }
+  }
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    &__description {
+      max-width: 90%;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 1) {
+    &__title {
+      // border: 1px solid red;
+      width: 60%;
+      margin-bottom: 6.25rem;
+    }
+    &__description {
+      width: 60%;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    &__title {
+      // border: 1px solid red;
+      width: 80%;
+    }
+    &__description {
+      width: 80%;
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    &__title {
+      // border: 1px solid red;
+      width: 40%;
+      margin-bottom: 10.25rem;
+    }
+    &__description {
+      width: 45%;
+      margin-bottom: 5.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    &__title {
+      // border: 1px solid red;
+      width: 45%;
+      margin-bottom: 10.25rem;
+    }
+    &__description {
+      width: 55%;
+      margin-bottom: 2.25rem;
     }
   }
 }

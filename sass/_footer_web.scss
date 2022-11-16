@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 
 .footer-web {
   position: absolute;
@@ -18,6 +19,11 @@
       width: 3.4375rem;
       height: 3.4375rem;
     }
+  }
+  //⬇️ 1069px
+  @media (max-width: 66.8125rem) {
+    // border: 8px solid red;
+    top: 220.625rem;
   }
   //⬇️ 951px
   @media (max-width: 59.4375rem) {
@@ -50,10 +56,31 @@
     // border: 8px solid red;
     top: 290.625rem;
   }
-  //⬇️⬆️ 376px
+  //⬇️⬆️ 375px
   @media (max-width: 23.5rem) {
     // border: 8px solid red;
     top: 285.625rem;
+  }
+
+  //⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 1) {
+    top: 310rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 1) {
+    top: 345rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    top: 305rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    top: 395rem;
+  }
+  //⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    top: 365rem;
   }
 }
 

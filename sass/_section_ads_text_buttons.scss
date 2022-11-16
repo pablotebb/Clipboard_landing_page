@@ -1,15 +1,81 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 
 .section-ads-text-buttons {
-  position: absolute;
+  // border: 1px solid blue;
   width: 100%;
+  position: absolute;
+  max-width: 100%;
   top: 175rem;
   left: 0;
-  // ⬇️⬆️ 778px
-  @media (max-width: 48.625rem) {
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-4k", 1) {
+    top: 180rem;
+  }
+  // 1115px
+  @media (max-width: 69.6875rem) {
+    // border: 1px solid red;
+    top: 160rem;
+  }
+  // 778px
+  @media (max-width: 48.6875rem) {
     // border: 8px solid red;
-    top: 225rem;
+    top: 190rem;
+  }
+
+  // 775px
+  @media (max-width: 48.4375rem) {
+    // border: 8px solid yellow;
+    top: 220rem;
+  }
+
+  // 462px
+  @media (max-width: 28.875rem) {
+    // border: 8px solid pink;
+    top: 220rem;
+  }
+
+  // 437px
+  @media (max-width: 28.875rem) {
+    // border: 8px solid yellow;
+    top: 200rem;
+  }
+
+  // ⬇️⬆️ 375px
+  @media (max-width: 23.5rem) {
+    // border: 8px solid yellow;
+    top: 210rem;
+  }
+
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    // border: 1px solid red;
+    top: 230rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("apple-iphone-6-7-plus", 1) {
+    top: 210rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 1) {
+    top: 250rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 1) {
+    top: 280rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    top: 250rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    top: 326rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    top: 290rem;
   }
 }
 
@@ -20,15 +86,12 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 0 7.4375rem;
-  &__image {
-  }
-  // ⬇️ 1014px
+  // 1014px
   @media (max-width: 48.625rem) {
-    // gap: 100px;
     padding: 0 1rem;
     justify-content: center;
   }
-  // ⬇️ 1066px
+  // 1066px
   @media (max-width: 66.625rem) {
     // border: 8px solid green;
     max-width: 50rem;
@@ -39,12 +102,38 @@
   }
   // ⬇️⬆️ 375px
   @media (max-width: 23.5rem) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3.75rem;
+  }
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
     // border: 1px solid red;
     position: relative;
     top: -18.75rem;
     flex-direction: column;
     align-items: center;
     gap: 5.0625rem;
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    &__image {
+      img {
+        // border: 1px solid red;
+        width: 100%;
+      }
+    }
+  }
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    &__image {
+      img {
+        // border: 1px solid red;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -55,69 +144,340 @@
   flex-direction: column;
   align-items: center;
   @include m.little_article(
-    // $Padding-right
+    // 1
     0,
-    // $Font-size-description
+    // 2
     1.1rem,
-    // $Font-size-title
+    // 3
     2.22rem,
-    // $Font-weight-title
+    // 4
     500,
-    // $Letter-spacing-title
+    // 5
     normal,
-    // $Color-title
+    // 6
     v.$Dark-Grayish-Blue,
-    // $Font-weight-description
+    // 7
     300,
-    // $Letter-spacing-description
+    // 8
     0.025rem,
-    // $Color-description
+    // 9
     v.$Grayish-Blue,
-    // $Width-description
+    // 10
     59%,
-    // $Margin-bottom-title
+    // 11
     1rem,
-    // Line-height-description
+    // 12
     1.5rem,
-    // $Width-title
+    // 13
     unset,
-    // $Justify-content-title
+    // 14
     center
   );
   text-align: center;
   margin-bottom: 2.875rem;
+
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-8k", 1) {
+    border: 1px solid red;
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      20%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-4k", 1) {
+    // border: 1px solid red;
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      20%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-2k", 1) {
+    // border: 1px solid red;
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      40%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️⬇️
+  @include md.d-tv("Television-1080p", 1) {
+    // border: 1px solid red;
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      40%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+
+  // 614px
+  @media (max-width: 38.4375rem) {
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      90%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+
   // ⬇️⬆️ 375px
   @media (max-width: 23.5rem) {
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      90%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
     position: relative;
     top: -18.75rem;
     @include m.little_article(
-      // $Padding-right
+      // 1
       0,
-      // $Font-size-description
+      // 2
       1rem,
-      // $Font-size-title
+      // 3
       1.7rem,
-      // $Font-weight-title
+      // 4
       500,
-      // $Letter-spacing-title
+      // 5
       normal,
-      // $Color-title
+      // 6
       v.$Dark-Grayish-Blue,
-      // $Font-weight-description
+      // 7
       300,
-      // $Letter-spacing-description
+      // 8
       0.025rem,
-      // $Color-description
+      // 9
       v.$Grayish-Blue,
-      // $Width-description
+      // 10
       90%,
-      // $Margin-bottom-title
+      // 11
       1rem,
-      // Line-height-description
+      // 12
       1.5rem,
-      // $Width-title
+      // 13
       80%,
-      // $Justify-content-title
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️
+  @include md.d-m("samsung-galaxy-s3-7", 2) {
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      90%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
+      center
+    );
+  }
+  // ⬇️⬆️
+  @include md.d-m("samsung-galaxy-s2", 2) {
+    @include m.little_article(
+      // 1
+      0,
+      // 2
+      1rem,
+      // 3
+      1.7rem,
+      // 4
+      500,
+      // 5
+      normal,
+      // 6
+      v.$Dark-Grayish-Blue,
+      // 7
+      300,
+      // 8
+      0.025rem,
+      // 9
+      v.$Grayish-Blue,
+      // 10
+      90%,
+      // 11
+      1rem,
+      // 12
+      1.5rem,
+      // 13
+      80%,
+      // 14
       center
     );
   }
@@ -126,15 +486,16 @@
 .right-article-buttons-container {
   @include m.create_buttons($width: 14.1875rem, $height: 3.4375rem);
   margin-bottom: 9.625rem;
-  // ⬇️ 558px
+  // 558px
   @media (max-width: 34.875rem) {
     display: flex;
     flex-direction: column;
     align-items: center;
     @include m.create_buttons($width: 80%, $height: 3.4375rem);
   }
+
   // ⬇️⬆️ 375px
-  @media (max-width: 23.5rem) {
+  @include md.d-m("apple-iphone-6-7", 1) {
     position: relative;
     top: -18.75rem;
   }

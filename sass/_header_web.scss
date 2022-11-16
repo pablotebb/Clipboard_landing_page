@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "mixins" as m;
+@use "mixins_dimensions" as md;
 
 .header-web {
   width: 100%;
@@ -14,12 +15,17 @@
   }
   &__title {
     // border: 1px solid red;
-    margin-top: 3.5rem;
     font-size: 2.83rem;
     font-weight: 500;
     color: v.$Dark-Grayish-Blue;
     letter-spacing: normal;
     text-align: center;
+    margin-bottom: 0.9375rem;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3.5rem auto 0.9375rem;
   }
   &__description {
     // border: 1px solid red;
@@ -29,6 +35,10 @@
     letter-spacing: 0.027rem;
     color: v.$Grayish-Blue;
     text-align: center;
+    width: 46rem;
+    max-width: 100%;
+    margin: auto;
+    height: 3.6875rem;
   }
   &__buttons {
     margin-top: 3.0625rem;
@@ -38,6 +48,7 @@
 
   // ⬇️ 560px
   @media (max-width: 35rem) {
+    // border: 5px solid blue;
     &__buttons {
       display: flex;
       flex-direction: column;
@@ -45,13 +56,118 @@
       @include m.create_buttons(20rem);
     }
   }
-  // ⬇️ 450px
+  // ⬇️⬆️ 450px
   @media (max-width: 28.125rem) {
     &__title {
+      // border: 1px solid red;
       font-size: 2rem;
     }
     &__description {
+      // border: 1px solid red;
       font-size: 0.9938rem;
+      width: 19rem;
+      max-width: 100%;
+      line-height: 1.85rem;
+      margin-bottom: 6.875rem;
+    }
+  }
+
+  // ⬇️⬆️ 375px
+  @media (max-width: 23.5rem) {
+    &__title {
+      // border: 1px solid red;
+      max-width: 85%;
+    }
+    &__description {
+      // border: 1px solid red;
+      max-width: 100%;
+      letter-spacing: normal;
+    }
+  }
+
+  // ⬇️⬆️ 375px
+  @include md.d-m("apple-iphone-6-7", 1) {
+    &__title {
+      // border: 1px solid red;
+      max-width: 85%;
+    }
+    &__description {
+      // border: 1px solid red;
+      max-width: 100%;
+      letter-spacing: normal;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("apple-iphone-3-4", 1) {
+    &__buttons {
+      @include m.create_buttons(12rem);
+      margin-bottom: 6.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 1) {
+    &__title {
+      // border: 1px solid red;
+      max-width: 70%;
+    }
+    &__description {
+      // border: 1px solid red;
+      max-width: 60%;
+      margin-bottom: 10.375rem;
+    }
+    &__buttons {
+      @include m.create_buttons(12rem);
+      margin-bottom: 6.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v8", 2) {
+    &__title {
+      // border: 1px solid red;
+      max-width: 80%;
+    }
+    &__description {
+      max-width: 85%;
+      margin-bottom: 6.375rem;
+    }
+    &__buttons {
+      @include m.create_buttons(16rem);
+      margin-bottom: 6.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 1) {
+    &__title {
+      // border: 1px solid red;
+      max-width: 20%;
+      text-align: center;
+    }
+    &__description {
+      max-width: 45%;
+      margin-bottom: 14.375rem;
+    }
+    &__buttons {
+      @include m.create_buttons(10rem);
+      margin-bottom: 6.25rem;
+    }
+  }
+
+  // ⬇️⬆️
+  @include md.d-m("motorola-razr-v3m", 2) {
+    &__title {
+      max-width: 50%;
+    }
+    &__description {
+      max-width: 55%;
+      margin-bottom: 10.375rem;
+    }
+    &__buttons {
+      @include m.create_buttons(11rem);
+      margin-bottom: 6.25rem;
     }
   }
 }
